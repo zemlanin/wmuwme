@@ -23,8 +23,8 @@ module.exports = (req, res) => {
   res.write(
     `<head>
        <title>${siteName}</title>
-       <meta name="og:site_name" content="${siteName}">
-       <meta name="og:title" content="${title}">
+       <meta property="og:site_name" content="${siteName}">
+       <meta property="og:title" content="${title}">
        <meta name="twitter:creator" content="@zemlanin">
     </head>
     <h1>Today is ${dayOfWeek}, March ${day}<sup>${suffix}</sup>, 2020</h1>`
