@@ -18,13 +18,13 @@ module.exports = (req, res) => {
     few: "rd",
     other: "th",
   }[new Intl.PluralRules("en", { type: "ordinal" }).select(day)];
-  const title = "Wake Me Up When March Ends";
-  const description = `Today is ${dayOfWeek}, March ${day}${suffix}, 2020`;
+  const siteName = "Wake Me Up When March Ends";
+  const title = `Today is ${dayOfWeek}, March ${day}${suffix}, 2020`;
   res.write(
     `<head>
-       <title>${title}</title>
+       <title>${siteName}</title>
+       <meta name="og:site_name" content="${siteName}">
        <meta name="og:title" content="${title}">
-       <meta name="og:description" content="${description}">
        <meta name="twitter:creator" content="@zemlanin">
     </head>
     <h1>Today is ${dayOfWeek}, March ${day}<sup>${suffix}</sup>, 2020</h1>`
