@@ -1,12 +1,12 @@
 {
   "alias": "wakemeupwhenmarchends.com",
   "functions": {
-    "index.js": {
+    "api/index.js": {
       "maxDuration": 1
     }
   },
   "rewrites": [
-    { "source": "/:path((?!index/).*)", "destination": "/index" }
+    { "source": "/:path((?!api/).*)", "destination": "/api/index" }
   ],
   "regions": ["cdg"]
 }
