@@ -1,4 +1,4 @@
-module.exports = (req, res) => {
+export default function handler(req, res) => {
   const now = new Date();
   const dayOfWeek = [
     "Sunday",
