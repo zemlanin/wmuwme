@@ -1,12 +1,10 @@
 {
-  "version": 2,
   "alias": "wakemeupwhenmarchends.com",
-  "builds": [
-    {
-      "src": "index.js",
-      "use": "@vercel/node"
-    }
+  "functions": {
+    "api/index.js": {}
+  },
+  "rewrites": [
+    { "source": "/*", "destination": "/" },
   ],
-  "routes": [{ "src": "/.+", "dest": "/index.js" }],
   "regions": ["cdg"]
 }
