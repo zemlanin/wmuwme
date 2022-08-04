@@ -4,7 +4,7 @@
     "index.js": {}
   },
   "rewrites": [
-    { "source": "/*", "destination": "/" }
+    { "source": "/:path((?!index/).*)", "destination": "/index" }
   ],
   "regions": ["cdg"]
 }
