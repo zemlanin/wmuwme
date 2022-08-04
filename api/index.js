@@ -20,7 +20,13 @@ module.exports = (req, res) => {
   }[new Intl.PluralRules("en", { type: "ordinal" }).select(day)];
   const siteName = "Wake Me Up When March Ends";
   const title = `Today is ${dayOfWeek}, March ${day}${suffix}, 2020`;
-  res.write(
+
+  res.writeHead(200, {
+    "Content-Type": "text/html",
+    "Cache-Control": `s-maxage=${60 * 60}, max-age=0`,
+  });
+
+  res.end(
     `<head>
        <title>${siteName}</title>
        <meta property="og:site_name" content="${siteName}">
@@ -29,10 +35,4 @@ module.exports = (req, res) => {
     </head>
     <h1>Today is ${dayOfWeek}, March ${day}<sup>${suffix}</sup>, 2020</h1>`
   );
-
-  res.writeHead(200, {
-    "Content-Type": "text/html",
-    "Cache-Control": `s-maxage=${60 * 60}, max-age=0`,
-  });
-  res.end();
 };
