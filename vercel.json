@@ -1,7 +1,9 @@
 {
   "alias": "wakemeupwhenmarchends.com",
   "functions": {
-    "index.js": {}
+    "index.js": {
+      "maxDuration": 1
+    }
   },
   "rewrites": [
     { "source": "/:path((?!index/).*)", "destination": "/index" }
